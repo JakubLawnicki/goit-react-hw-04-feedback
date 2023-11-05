@@ -1,13 +1,7 @@
 import styles from './statistics.module.css';
 import PropTypes from 'prop-types';
 
-export default function Statistics({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
-}) {
+export function Statistics({ good, neutral, bad, total, positivePercentage }) {
   if (total === 0) {
     return <span className={styles['stat-item']}>There is no feedback</span>;
   }

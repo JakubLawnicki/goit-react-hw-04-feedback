@@ -1,7 +1,15 @@
 import styles from './feedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
-export default function FeedbackOptions({ options, onLeaveFeedback }) {
+export function FeedbackOptions({
+  options,
+  good,
+  neutral,
+  bad,
+  setGood,
+  setNeutral,
+  setBad,
+}) {
   const { respGood, respNeutr, respBad } = options;
 
   return (
@@ -11,9 +19,7 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
           className={styles.button}
           type="button"
           name={respGood}
-          onClick={e => {
-            return onLeaveFeedback(e.currentTarget.name);
-          }}
+          onClick={() => setGood(good + 1)}
         >
           {respGood.toUpperCase()}
         </button>
@@ -23,9 +29,7 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
           className={styles.button}
           type="button"
           name={respNeutr}
-          onClick={e => {
-            return onLeaveFeedback(e.currentTarget.name);
-          }}
+          onClick={() => setNeutral(neutral + 1)}
         >
           {respNeutr.toUpperCase()}
         </button>
@@ -35,9 +39,7 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
           className={styles.button}
           type="button"
           name={respBad}
-          onClick={e => {
-            return onLeaveFeedback(e.currentTarget.name);
-          }}
+          onClick={() => setBad(bad + 1)}
         >
           {respBad.toUpperCase()}
         </button>
@@ -48,5 +50,10 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.object,
-  onLeaveFeedback: PropTypes.func,
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  setGood: PropTypes.func,
+  setNeutral: PropTypes.func,
+  setBad: PropTypes.func,
 };
