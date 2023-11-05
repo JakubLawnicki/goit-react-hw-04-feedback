@@ -1,0 +1,24 @@
+.button {
+  color: white;
+  font-size: 14px;
+  background-color: rgb(129, 171, 79);
+  border: 1px solid black;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 90px;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: darkgreen;
+  font-weight: 700;
+}
+.buttons {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  gap: 20px;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
